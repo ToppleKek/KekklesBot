@@ -22,6 +22,7 @@ module Bot
   BOT.ready do |event|
     puts "Ready"
   end
+  
   # This class method wraps the module lazy-loading process of discordrb command
   # and event modules. Any module name passed to this method will have its child
   # constants iterated over and passed to `Discordrb::Commands::CommandBot#include!`
