@@ -1,2 +1,0 @@
-# KekklesBot
-Kekkles Discord Bot
