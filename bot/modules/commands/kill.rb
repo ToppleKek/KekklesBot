@@ -3,7 +3,7 @@ module Bot::DiscordCommands
     module Kill
         extend Discordrb::Commands::CommandContainer
         command :kill do |event|
-            "Bye"
+            event.respond "Bye"
             exit
         end
     end
