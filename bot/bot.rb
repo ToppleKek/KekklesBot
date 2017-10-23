@@ -1,5 +1,6 @@
 #https://github.com/z64/gemstone
 #credit to z64
+$LOAD_PATH << File.dirname(__FILE__)
 
 require 'discordrb'
 require 'ostruct'
@@ -10,17 +11,15 @@ module Bot
   # Load non-Discordrb modules
   Dir['bot/modules/*.rb'].each { |mod| load mod }
 
-  # Bot configuration
   CONFIG = OpenStruct.new YAML.load_file 'data/config.yaml'
-
-  # Create the bot.
-  # The bot is created as a constant, so that you
-  # can access the cache anywhere.
   BOT = Discordrb::Commands::CommandBot.new(client_id: CONFIG.client_id,
-                                            token: CONFIG.token,
-                                            prefix: CONFIG.prefix)
+  token: CONFIG.token,
+  prefix: CONFIG.prefix)
+
   BOT.ready do |event|
-    puts "Ready"
+    LOGGER = Logger.new(ENV['DISCORDRB_FANCY_LOG'])
+    LOGGER.debug
+    puts "Kekkles Bot, V: 0.0.1"
   end
   
   # This class method wraps the module lazy-loading process of discordrb command

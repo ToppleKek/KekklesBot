@@ -3,7 +3,9 @@ module Bot::DiscordCommands
     module Ping
         extend Discordrb::Commands::CommandContainer
         command :ping do |event|
-            "Pong! `#{::Time.now - event.timestamp} ms`"
+            ping = ::Time.now - event.timestamp
+            pingr = ping * 1000
+            "Pong! `#{pingr.round} ms`"
         end
     end
 end

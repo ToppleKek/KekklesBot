@@ -9,6 +9,10 @@ module Bot::DiscordCommands
                 s.gsub!('cpu', 'cups')
                 s.gsub!('meme', 'MEME :smile:')
             end
+            
+            break if bench.join(' ').include? "@everyone"
+            break if bench.join(' ').include? "@here"
+
             if bench.join(' ').include? "bad"
                 if bench.join(' ').include? " a "
                     event.respond "mmmmmmm, #{bench.join(' ').gsub!(' a ', ' an ')} my man :sob:"

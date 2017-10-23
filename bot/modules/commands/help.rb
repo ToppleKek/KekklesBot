@@ -10,7 +10,7 @@ module Bot::DiscordCommands
                 embed.title = 'Help'
                 embed.add_field(name: 'Fun Commands', value: "k!bench - Bench translator :D\nk!distort - distort an image")
                 embed.add_field(name: 'Other Commands', value: "k!help - This command\nk!ping - ping with time")
-                embed.add_field(name: 'Mod Commands', value: 'N/A')
+                embed.add_field(name: 'Mod Commands', value: 'k!naenae - When the haters dab back hit them with the naenae (ban)\nk!dabon - Dab on the haters (kick)')
                 embed.color = [16731434].sample
             end
         end
